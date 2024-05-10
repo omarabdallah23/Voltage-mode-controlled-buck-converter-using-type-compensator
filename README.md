@@ -40,6 +40,7 @@ D+d' = (Vc+vc')/Vmax
 therefore:
 D = Vc/Vmax
 d' = vc'/Vmax
-The transfer function of PWM = Gm = d'/vc' = 1/Vmax however this model is valid as long as the PWM samples the control signal onces over the switching frequency
+The transfer function of PWM = Gm = d'/vc' = 1/Vmax however this model is valid as long as the PWM samples the control signal onces over the switching frequency.
+
 The final closed-loop transfer function will be Gcl = Gvd * H * Gm.
 ## Type ||| compensator or PID:
