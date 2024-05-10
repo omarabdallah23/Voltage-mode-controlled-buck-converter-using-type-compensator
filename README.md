@@ -21,3 +21,7 @@ L = (D*(1-D)*Vin)*2.5/fs*dIL = 0.5mH
 C = ((1-D)*1.5)/dVout*8*fs^2*L = 0.5uF
 where D is the duty cycle, Rout is the load resistance, L is the inductor's value, C is the capacitor's value, 2.5 and 1.5 in the above equations are safety factors.
 ## Closed-loop transfer functions:
+According to the buck converter's small signal model:
+![download (2)](https://github.com/omarabdallah23/Voltage-mode-controlled-buck-converter-using-type-compensator/assets/143711494/1a1df8b9-20c8-45bf-9186-f988aa879a89)
+
+dafs
