@@ -64,6 +64,7 @@ To choose the parameters of your type ||| compensator, follow these steps:
 2. wo/10 << wz1 and wz2 << 2wo
 3. ws <= wp1 and wp2 <= 10ws
 4. Adjust gain (A) based on the erquired phase margin
+
 Note: Make sure that the loop gain is almost a straight line and that the magnitude of the loop gain is very high  at low frequenices to neglect minor disturbances and not take control action on it and very low at high frequencies to dampen switching frequencies.
 To implement the type ||| compensator practically follow the following drawing ans calaculations:
 
