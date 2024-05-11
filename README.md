@@ -48,4 +48,6 @@ d' = vc'/Vmax
 The transfer function of PWM = Gm = d'/vc' = 1/Vmax however this model is valid as long as the PWM samples the control signal onces over the switching frequency.
 
 The final closed-loop transfer function will be Gcl = Gvd * H * Gm.
-## Type ||| compensator or PID:
+## Type ||| compensator or PID?:
+Using a PID controller is not wrong however if we compared the transfer functions of PID and the type ||| compensator, you can notice that the Type ||| compensator is actually a PID controller + a 2nd order filter. The 2nd order filter helps in damping the switching frequency to avoid switching harmonics. If the switching frequency is not damped, the controller will react to these oscillations and the PWM model won't be valid. Another reason for favouring the type ||| compensator is that the hardware implementation of the type ||| compensator only needs 1 opamp while that of the PID needs 3 opamps. You can always use a microcontroller and implement the PID as a software algorithm however this buck converter is required to provide a fixed output voltage not a variable one and using microcontroller will add unnecessary costs that can be easily avoided if i used type ||| compensator with analogue approach.
+## Steps to design a type ||| compensator:
