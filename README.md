@@ -66,7 +66,7 @@ To choose the parameters of your type ||| compensator, follow these steps:
 4. Adjust gain (A) based on the erquired phase margin
 
 Note: Make sure that the loop gain is almost a straight line and that the magnitude of the loop gain is very high  at low frequenices to neglect minor disturbances and not take control action on it and very low at high frequencies to dampen switching frequencies.
-To implement the type ||| compensator practically follow the following drawing ans calaculations:
+To implement the type ||| compensator practically follow the following drawing and calaculations:
 
 ![download (3)](https://github.com/omarabdallah23/Voltage-mode-controlled-buck-converter-using-type-compensator/assets/143711494/e8ba815f-ede6-44b5-ae06-5340c47b1935)
 
