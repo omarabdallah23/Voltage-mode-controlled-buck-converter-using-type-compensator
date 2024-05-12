@@ -70,3 +70,39 @@ To implement the type ||| compensator practically follow the following drawing a
 
 ![download (3)](https://github.com/omarabdallah23/Voltage-mode-controlled-buck-converter-using-type-compensator/assets/143711494/e8ba815f-ede6-44b5-ae06-5340c47b1935)
 
+A = 1/(R1*(C2+C1))
+
+wz1 = 1/(R2*C3)
+
+wz2 = 1/(C3*(R1+R3))
+
+wp1 = 1/(R3*C3)
+
+wp2 = 1/(R2*((C2*C1)/(C2+C1)))
+
+From the previousely mentioned steps i chose the following values for the zeros and poles:
+
+wz1 = 20e3 rad/s
+
+wz2 = 80e3 rad/s
+
+wp1 = 1e6 rad/s
+
+wp2 = 2e6 rad/s
+
+![System's response before adjusting gain](https://github.com/omarabdallah23/Voltage-mode-controlled-buck-converter-using-type-compensator/assets/143711494/81033a2e-762d-4013-8364-eb1c45a1dd13)
+
+It can be observed that the loop gain is about zero at 0 rad/s which violates our rule of making the loop gain very high at switching frequency. It can also be observed that the settling time is about 4 seconds which is very long. That is why the gain must be adjusted to increase the loop gain and decrease the settling time.
+
+![SISO tool](https://github.com/omarabdallah23/Voltage-mode-controlled-buck-converter-using-type-compensator/assets/143711494/fab22983-e3a9-4bcf-b5b5-fdc8f4723c25)
+
+After trial and error, a gain of 5e6 was found to satisfy the desired requirments and the final transfer function of the controller is
+
+![Controller's transfer function](https://github.com/omarabdallah23/Voltage-mode-controlled-buck-converter-using-type-compensator/assets/143711494/3c4936e2-b502-4982-946c-43998c9fa514)
+
+## SIMULINK model:
+
+![Buck converter with type 3 compensator](https://github.com/omarabdallah23/Voltage-mode-controlled-buck-converter-using-type-compensator/assets/143711494/d499ad19-c6f0-44e0-a71c-8d9cc7f2d246)
+
+The above image shows a closed-loop buck converter with the type ||| compensator that was just designed. I have added some disturbances to my system to make it more relaistic. The AC voltage in series with the DC input voltage represents a disturbance which may be caused by the charging and discharging of the rectifier's capacitor for example. I have added a series resistance to the inductor to repersent the resistance of the inductor and another series resistance to the capacitor to represent the capacitor's ESR.
+
