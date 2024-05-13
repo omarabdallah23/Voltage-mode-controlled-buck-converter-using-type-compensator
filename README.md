@@ -14,6 +14,7 @@ Let's assume that the design requirments for your buck converter are as follows:
 4. dIL <= 20% of ILavg
 5. dVout <= 5%
 6. fs = 100KHz
+
 where Vin is the input voltage, Vout is the output voltage, Iout is the output current, dIL is the allowable current ripple in the inductor's current, ILavg is the average inductor current, dVout is the allowable output voltage ripple and fs is the switching frequency.
 therefore:
 
