@@ -5,6 +5,7 @@
 3. Type 3 compensator or PID?
 4. Steps to design a Type 3 compensator
 5. SIMULINK model
+6. Reference list
 ## Design requirments:
 Let's assume that the design requirments for your buck converter are as follows:
 1. Vin = 48V
@@ -106,3 +107,14 @@ After trial and error, a gain of 5e6 was found to satisfy the desired requirment
 
 The above image shows a closed-loop buck converter with the type ||| compensator that was just designed. I have added some disturbances to my system to make it more relaistic. The AC voltage in series with the DC input voltage represents a disturbance which may be caused by the charging and discharging of the rectifier's capacitor for example. I have added a series resistance to the inductor to repersent the resistance of the inductor and another series resistance to the capacitor to represent the capacitor's ESR.
 
+![Inductor's current](https://github.com/omarabdallah23/Voltage-mode-controlled-buck-converter-using-type-compensator/assets/143711494/82a54d2c-73a6-4488-85e3-feaab56e4f26)
+
+ We can see that the inductor's current is equal to 2A on average and is in continous conduction mode.
+
+ ![Vo vs Vref](https://github.com/omarabdallah23/Voltage-mode-controlled-buck-converter-using-type-compensator/assets/143711494/9a5d0757-53bb-45e0-a28b-6e63577ba3e2)
+
+ The output voltage is 12V on average and the ripple is within the allowable range of 5%
+
+Refrence list:
+1. https://www.udemy.com/course/converter-modeling-and-control-part-1-voltage-mode-control/?couponCode=LETSLEARNNOW
+2. Modeling and simulation of Multi-physics systems with MATLAB-SIMULINK for students and engineers Second edition
